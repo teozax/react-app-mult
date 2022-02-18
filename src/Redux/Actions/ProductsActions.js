@@ -21,9 +21,9 @@ export const LoadProductsAction = (url, RequestOptions) => {
     HandleRequest(url2, RequestOptions2).then(res=>res.json()).then((res) => {
       if(res){
         // const data = res.is_added_to_cart;
-        dispatch({type: ActionTypes.LOAD_IMG_URLS_SUCCESS, res});
+        dispatch({type: 'LOAD_IMG_URLS_SUCCESS', res});
       }else {
-        dispatch({type: ActionTypes.LOAD_IMG_URLS_ERROR,res});
+        dispatch({type: 'LOAD_IMG_URLS_ERROR',res});
       }
       }, error => {
         dispatch({type : ActionTypes.CODE_ERROR, error})
