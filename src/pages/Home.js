@@ -82,7 +82,7 @@ const Home = () => {
           
             <Link to={`/Product/${prod.id}`} >
               <div ref={ref} className='img_cover'><h3 className='img-price  position-absolute'>{prod.price}$</h3></div>
-              <img className="img-fluid img_cont "   src={"https://files.fm/u/j5s8ct5jq#/view/0.jpg"}  />
+              <img className="img-fluid img_cont "   src={"https://files.fm/thumb_show.php?i=r88wcdx8e"}  />
             </Link>
           
         </div>
