@@ -24,7 +24,6 @@ function Login() {
   
   const UserLogin = (e) => {
     e.preventDefault();
-    console.log(fields);
     let url = '';
     let RequestOptions = '';
     switch(fields.framework){

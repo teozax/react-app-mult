@@ -8,17 +8,12 @@ import {NavBar} from './NavigationBar/NavBar.js'
 import {LoadCartAction} from './Redux/Actions/CartActions';
 
 export default function Header(props) {
-
-  console.log(process.env)
-
   const authResponse = useSelector(state=>state.userAuth.authResponse);
   const framework = localStorage.getItem('framework');
   const add_trigger = useSelector(state => state.productDetails.add_trigger);
   const trigger = useSelector(state => state.cart.trigger);
   const token = localStorage.getItem('user-token');
   const dispatch = useDispatch();
-  console.log(authResponse);
-
 
   // React.useEffect(() => {
   //   if(authResponse !== "" && authResponse.success === true){
