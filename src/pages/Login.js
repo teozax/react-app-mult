@@ -28,7 +28,7 @@ function Login() {
     let RequestOptions = '';
     switch(fields.framework){
       case 'Django':
-        url = `${JSON.parse(process.env.REACT_APP_API_URL)[framework]}/api/auth/login`;
+        url = `${JSON.parse(process.env.REACT_APP_API_URL)[fields.framework]}/api/auth/login`;
         RequestOptions ={ 
           method: 'POST',
           headers: {
@@ -38,7 +38,7 @@ function Login() {
         };
         break;
       case 'Laravel':
-        url = `${JSON.parse(process.env.REACT_APP_API_URL)[framework]}/api/users/login`;
+        url = `${JSON.parse(process.env.REACT_APP_API_URL)[fields.framework]}/api/users/login`;
         RequestOptions ={ 
           method: 'POST',
           headers: {
@@ -48,7 +48,7 @@ function Login() {
         };
         break; 
       case 'Express':
-        url = `${JSON.parse(process.env.REACT_APP_API_URL)[framework]}/login`;
+        url = `${JSON.parse(process.env.REACT_APP_API_URL)[fields.framework]}/login`;
         RequestOptions ={ 
           method: 'POST',
           headers: {
