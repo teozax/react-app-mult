@@ -23,7 +23,7 @@ const Home = () => {
   
   switch(framework){
     case 'Django':
-      url = "http://127.0.0.1:8001/products/";
+      url = `${JSON.parse(process.env.REACT_APP_API_URL)[framework]}/products/`;
       RequestOptions ={
         method: 'GET',
         headers: {
@@ -31,7 +31,7 @@ const Home = () => {
         },
       };break;
     case 'Laravel':
-      url = "http://localhost:8000/api/products";
+      url = `${JSON.parse(process.env.REACT_APP_API_URL)[framework]}/api/products`;
       RequestOptions ={ 
         method: 'GET',
         headers: {
@@ -39,7 +39,7 @@ const Home = () => {
         },
       };break;
     case'Express':
-      url = `${process.env.Express_Url}/api/products`;
+      url = `${JSON.parse(process.env.REACT_APP_API_URL)[framework]}/api/products`;
   }
 
   useEffect(() => {

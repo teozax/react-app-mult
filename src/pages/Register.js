@@ -34,7 +34,7 @@ function RegisterComponent() {
     
     switch(fields.framework){
       case 'Django':
-        url = "http://localhost:8001/api/auth/register";
+        url = `${JSON.parse(process.env.REACT_APP_API_URL)[fields.framework]}/api/auth/register`;
         RequestOptions ={ 
           method: 'POST',
           headers: {
@@ -44,7 +44,7 @@ function RegisterComponent() {
           body : JSON.stringify({username:fields.name,email:fields.email,password:fields.password})
         };break;
       case 'Laravel': 
-        url = "http://localhost:8000/api/users/register";
+        url = `${JSON.parse(process.env.REACT_APP_API_URL)[fields.framework]}/api/users/register`;
         RequestOptions ={ 
           method: 'POST',
           headers: {
@@ -56,7 +56,7 @@ function RegisterComponent() {
         };
         break;
       case 'Express':
-        url = `${process.env.Express_Url}/signup`;
+        url = `${JSON.parse(process.env.REACT_APP_API_URL)[fields.framework]}/signup`;
         RequestOptions ={ 
           method: 'POST',
           headers: {

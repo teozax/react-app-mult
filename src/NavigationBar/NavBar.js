@@ -162,7 +162,7 @@ function LogOut(dispatch,navigate) {
 
   switch(framework){
     case 'Django':
-      url = "http://localhost:8001/api/auth/logout";
+      url = `${JSON.parse(process.env.REACT_APP_API_URL)[framework]}/api/auth/logout`;
       RequestOptions ={ 
         method: 'POST',
         headers: {
@@ -171,7 +171,7 @@ function LogOut(dispatch,navigate) {
       };
       break;
     case 'Laravel':
-      url = "http://localhost:8000/api/users/logout";
+      url = `${JSON.parse(process.env.REACT_APP_API_URL)[framework]}/api/users/logout`;
       RequestOptions ={ 
         method: 'GET',
         headers: {
@@ -182,7 +182,7 @@ function LogOut(dispatch,navigate) {
       };
       break;
     case 'Express':
-      url = `${process.env.Express_Url}/user/logout`;
+      url = `${JSON.parse(process.env.REACT_APP_API_URL)[framework]}/user/logout`;
       RequestOptions ={ 
         method: 'GET',
         headers: {

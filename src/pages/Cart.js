@@ -32,7 +32,7 @@ function Cart() {
 
     switch (framework){
       case 'Express':
-        url = `${process.env.Express_Url}/api/cart/update`;
+        url = `${JSON.parse(process.env.REACT_APP_API_URL)[framework]}/api/cart/update`;
         RequestOptions ={ 
           method: 'POST',
           headers: {
@@ -53,7 +53,7 @@ function Cart() {
 
     switch (framework){
       case 'Express':
-        url = `${process.env.Express_Url}/api/cart/remove`;
+        url = `${JSON.parse(process.env.REACT_APP_API_URL)[framework]}/api/cart/remove`;
         RequestOptions ={ 
           method: 'POST',
           headers: {

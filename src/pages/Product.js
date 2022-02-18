@@ -19,14 +19,14 @@ const Product = (props) => {
   React.useEffect(() => {
     switch(framework){
       case 'Django':
-        url = `http://127.0.0.1:8001/products/${id}/`;
-        url2 = 'http://127.0.0.1:8001/cart/';
+        url = `${JSON.parse(process.env.REACT_APP_API_URL)[framework]}/products/${id}/`;
+        url2 = `${JSON.parse(process.env.REACT_APP_API_URL)[framework]}/cart/`;
         break;
       case 'Laravel':
-        url = `http://localhost:8000/api/products/${id}`;
+        url = `${JSON.parse(process.env.REACT_APP_API_URL)[framework]}/api/products/${id}`;
         break;
       case 'Express':
-        url = `${process.env.Express_Url}/api/products/${id}`;
+        url = `${JSON.parse(process.env.REACT_APP_API_URL)[framework]}/api/products/${id}`;
         // url2 = 'http://127.0.0.1:8001/cart/';
         break;
     }
@@ -58,7 +58,7 @@ const Product = (props) => {
     const token = localStorage.getItem('user-token');
     switch(framework){
       case 'Django':
-        url = `http://127.0.0.1:8001/cart/`;
+        url = `${JSON.parse(process.env.REACT_APP_API_URL)[framework]}/cart/`;
         RequestOptions = {
           method: 'POST',
           headers: {
@@ -72,7 +72,7 @@ const Product = (props) => {
         // url = `http://localhost:8000/api/products/${params.id}`;
         break;
       case 'Express':
-        url = `${process.env.Express_Url}/api/cart/add`;
+        url = `${JSON.parse(process.env.REACT_APP_API_URL)[framework]}/api/cart/add`;
         RequestOptions = {
           method: 'POST',
           headers: {

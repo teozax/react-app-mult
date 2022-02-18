@@ -37,7 +37,7 @@ console.log('trig',trigger)
 
     switch (framework){
       case 'Laravel':
-        url = `http://127.0.0.1:8000/api/users/update`;
+        url = `${JSON.parse(process.env.REACT_APP_API_URL)[framework]}/api/users/update`;
         RequestOptions ={ 
           method: 'POST',
           headers: {

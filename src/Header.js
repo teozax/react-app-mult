@@ -28,7 +28,7 @@ export default function Header(props) {
     let url; let RequestOptions;
     switch (framework){
       case 'Django':
-        url = `http://127.0.0.1:8001/cart/`;
+        url = `${JSON.parse(process.env.REACT_APP_API_URL)[framework]}/cart/`;
         RequestOptions = { 
           method: 'POST',
           headers: {
@@ -39,7 +39,7 @@ export default function Header(props) {
         };
         break;
       case 'Express':
-        url = `${process.env.Express_Url}/api/cart`;
+        url = `${JSON.parse(process.env.REACT_APP_API_URL)[framework]}/api/cart`;
         RequestOptions ={ 
           method: 'POST',
           headers: {
