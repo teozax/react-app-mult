@@ -64,6 +64,9 @@ const Home = () => {
     // ref.current.classList.remove('img-priceh');
   }
 
+  const img_urls = useSelector(state=>state.productDetails.img_urls);
+  console.log(img_urls)
+
   return (
   <div className=''>
   <div className="position-relative container ">
@@ -82,7 +85,7 @@ const Home = () => {
           
             <Link to={`/Product/${prod.id}`} >
               <div ref={ref} className='img_cover'><h3 className='img-price  position-absolute'>{prod.price}$</h3></div>
-              <img className="img-fluid img_cont "   src={"https://files.fm/thumb_show.php?i=r88wcdx8e"}  />
+              <img className="img-fluid img_cont "   src={`https://files.fm/thumb_show.php?i=${img_urls[i]}`}  />
             </Link>
           
         </div>

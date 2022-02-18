@@ -3,7 +3,8 @@ const initState = {
   products: [],
   product:{},
   is_added: false,
-  add_trigger:1
+  add_trigger:1,
+  img_urls: []
 };
 const ProductReducer = (state = initState, action) => {
 switch (action.type) {
@@ -46,6 +47,8 @@ return {
 is_added: true,
 add_trigger: action.trigger * (-1)
 };
+case 'LOAD_IMG_URLS_SUCCESS':
+return {...state,img_urls:action.res};
 default:
 return state;
 }

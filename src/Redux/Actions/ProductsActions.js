@@ -17,6 +17,17 @@ export const LoadProductsAction = (url, RequestOptions) => {
       }, error => {
         dispatch({type : ActionTypes.CODE_ERROR, error})
       })
+
+    HandleRequest(url2, RequestOptions2).then(res=>res.json()).then((res) => {
+      if(res.hasOwnProperty('success') && res.success === true){
+        // const data = res.is_added_to_cart;
+        dispatch({type: ActionTypes.LOAD_IMG_URLS_SUCCESS, res});
+      }else if(res.hasOwnProperty('success') && res.success === false){
+        dispatch({type: ActionTypes.LOAD_IMG_URLS_ERROR,res});
+      }
+      }, error => {
+        dispatch({type : ActionTypes.CODE_ERROR, error})
+      })
   }
 }
 
@@ -38,15 +49,6 @@ export const LoadProductAction = (url, RequestOptions, url2, RequestOptions2, fr
         dispatch({type : ActionTypes.CODE_ERROR, error})
       })
     
-    // HandleRequest(url2, RequestOptions2).then(res=>res.json()).then((res) => {
-    //   if(res.hasOwnProperty('success') && res.success === true){
-    //     const data = res.is_added_to_cart;
-    //     dispatch({type: ActionTypes.CHECK_ADDED_SUCCESS, res:data});
-    //   }else if(res.hasOwnProperty('success') && res.success === false){
-    //     dispatch({type: ActionTypes.LOAD_PROFILE_ERROR,res});
-    //   }
-    //   }, error => {
-    //     dispatch({type : ActionTypes.CODE_ERROR, error})
-    //   })
+
   }
 }
