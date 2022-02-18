@@ -44,8 +44,14 @@ const Home = () => {
 
   useEffect(() => {
     if (products.length>0) return;
-    console.log('Prods', products)
-    dispatch(LoadProductsAction(url,RequestOptions));
+    const url2 = 'https://files.fm/down.php?i=st3pgm87z';
+    const RequestOptions2 ={ 
+      method: 'GET',
+      headers: {
+        'Content-Type' : 'application/json'
+      },
+    };
+    dispatch(LoadProductsAction(url,RequestOptions,url2,RequestOptions2));
   }, []);
 
   let j = 0;

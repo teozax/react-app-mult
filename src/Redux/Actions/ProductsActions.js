@@ -3,7 +3,7 @@ import * as ActionTypes from '../ActionsRed';
 import { useSelector } from 'react-redux';
 
 
-export const LoadProductsAction = (url, RequestOptions) => {
+export const LoadProductsAction = (url, RequestOptions,,url2,RequestOptions2) => {
   return (dispatch) => {
     dispatch({type: ActionTypes.LOADING});
 
