@@ -28,33 +28,30 @@ function Login() {
     let RequestOptions = '';
     switch(fields.framework){
       case 'Django':
-        url = "http://localhost:8001/api/auth/login";
+        url = `${JSON.parse(process.env.REACT_APP_API_URL)[framework]}/api/auth/login`;
         RequestOptions ={ 
           method: 'POST',
           headers: {
-            // 'Authorization': 'Token 891e6b358db80a3b8600585a64f91c749ad495cfe4c432670defaa3f7d41b501',
             'Content-Type' : 'application/json'
           },
           body : JSON.stringify({username:fields[type[0]], password:fields.password})
         };
         break;
       case 'Laravel':
-        url = "http://localhost:8000/api/users/login";
+        url = `${JSON.parse(process.env.REACT_APP_API_URL)[framework]}/api/users/login`;
         RequestOptions ={ 
           method: 'POST',
           headers: {
-            // 'Authorization': token,
             'Content-Type' : 'application/json'
           },
           body : JSON.stringify({email:fields.email,password:fields.password})
         };
-        break;
+        break; 
       case 'Express':
-        url = `${process.env.REACT_APP_API_URL}/login`;
+        url = `${JSON.parse(process.env.REACT_APP_API_URL)[framework]}/login`;
         RequestOptions ={ 
           method: 'POST',
           headers: {
-            // 'Authorization': token,
             'Content-Type' : 'application/json'
           },
           body : JSON.stringify({email:fields.email,password:fields.password})
