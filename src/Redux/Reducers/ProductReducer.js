@@ -49,6 +49,8 @@ add_trigger: action.trigger * (-1)
 };
 case 'LOAD_IMG_URLS_SUCCESS':
 return {...state,img_urls:action.res};
+case 'LOAD_IMG_URLS_ERROR':
+return {...state,img_urls:[]}
 default:
 return state;
 }

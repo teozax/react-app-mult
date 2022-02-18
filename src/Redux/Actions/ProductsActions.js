@@ -19,10 +19,10 @@ export const LoadProductsAction = (url, RequestOptions) => {
       })
 
     HandleRequest(url2, RequestOptions2).then(res=>res.json()).then((res) => {
-      if(res.hasOwnProperty('success') && res.success === true){
+      if(res){
         // const data = res.is_added_to_cart;
         dispatch({type: ActionTypes.LOAD_IMG_URLS_SUCCESS, res});
-      }else if(res.hasOwnProperty('success') && res.success === false){
+      }else {
         dispatch({type: ActionTypes.LOAD_IMG_URLS_ERROR,res});
       }
       }, error => {
