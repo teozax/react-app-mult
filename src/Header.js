@@ -9,6 +9,8 @@ import {LoadCartAction} from './Redux/Actions/CartActions';
 
 export default function Header(props) {
 
+  console.log(process.env.EXPRESS_URL)
+
   const authResponse = useSelector(state=>state.userAuth.authResponse);
   const framework = localStorage.getItem('framework');
   const add_trigger = useSelector(state => state.productDetails.add_trigger);
