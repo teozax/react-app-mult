@@ -18,7 +18,7 @@ export const LoadProductsAction = (url, RequestOptions,url2,RequestOptions2) => 
         dispatch({type : ActionTypes.CODE_ERROR, error});
       })
 
-    HandleRequest(url2, RequestOptions2).then(res=>{console.log('res',res); JSON.parse(res);}).then((res) => {
+    HandleRequest(url2, RequestOptions2).then(res=>{console.log('res',res); const r=JSON.parse(res); console.log('res3',r); }).then((res) => {
       console.log('res2',res); 
       if(res){
         // const data = res.is_added_to_cart;
