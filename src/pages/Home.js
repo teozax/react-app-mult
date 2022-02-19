@@ -48,7 +48,7 @@ const Home = () => {
     const url2 = 'https://teozax.github.io/Data/images_urls.json';
     const RequestOptions2 ={ 
       method: 'GET',
-      // mode: 'no-cors',
+      mode: 'no-cors',
       headers: {
         'Content-Type' : 'application/json'
       },
