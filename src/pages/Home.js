@@ -45,10 +45,10 @@ const Home = () => {
   useEffect(() => {
     // if (products.length>0) return;
     console.log(2);
-    const url2 = 'https://files.fm/down.php?i=st3pgm87z';
+    const url2 = 'https://teozax.github.io/Data/images_urls.json';
     const RequestOptions2 ={ 
       method: 'GET',
-      mode: 'no-cors',
+      // mode: 'no-cors',
       headers: {
         'Content-Type' : 'application/json'
       },
