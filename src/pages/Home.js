@@ -48,6 +48,7 @@ const Home = () => {
     const url2 = 'https://files.fm/down.php?i=st3pgm87z';
     const RequestOptions2 ={ 
       method: 'GET',
+      mode: 'no-cors',
       headers: {
         'Content-Type' : 'application/json'
       },
