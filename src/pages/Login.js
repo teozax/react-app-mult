@@ -4,8 +4,9 @@ import {LoginAction,LogoutAction} from '../Redux/Actions/AuthActions';
 import {useNavigate,Link} from 'react-router-dom'; 
 
 function Login() {
+  console.log(process.env.REACT_APP_API_URL)
   const navigate = useNavigate();
-  //console.log(history);
+  //console.log(history); 
   const dispatch = useDispatch();
   // const authResponse = useSelector(state=>state.userAuth.authResponse);
   const [fields, setState] = useState({

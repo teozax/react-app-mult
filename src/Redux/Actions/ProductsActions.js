@@ -1,9 +1,9 @@
 import {HandleRequest} from '../Services/PrepareService';
 import * as ActionTypes from '../ActionsRed';
 import { useSelector } from 'react-redux';
+import axios from 'axios';
 
-
-export const LoadProductsAction = (url, RequestOptions,url2,RequestOptions2) => {
+export const LoadProductsAction = (url, RequestOptions) => {
   return (dispatch) => {
     dispatch({type: ActionTypes.LOADING});
 
@@ -18,17 +18,17 @@ export const LoadProductsAction = (url, RequestOptions,url2,RequestOptions2) => 
         dispatch({type : ActionTypes.CODE_ERROR, error});
       })
 
-    HandleRequest(url2, RequestOptions2).then(res=>{console.log('res',res); const r=JSON.parse(res); console.log('res3',r); }).then((res) => {
-      console.log('res2',res); 
-      if(res){
-        // const data = res.is_added_to_cart;
-        dispatch({type: 'LOAD_IMG_URLS_SUCCESS', res:res.urls});
-      }else {
-        dispatch({type: 'LOAD_IMG_URLS_ERROR',res});
-      }
-      }, error => {
-        dispatch({type : ActionTypes.CODE_ERROR, error})
-      })
+    // axios.get(url2, RequestOptions2).then((res) => {
+    //   console.log('res2',res.data); 
+    //   if(res){
+    //     // const data = res.is_added_to_cart;
+    //     dispatch({type: 'LOAD_IMG_URLS_SUCCESS', res:res.data});
+    //   }else {
+    //     dispatch({type: 'LOAD_IMG_URLS_ERROR',res});
+    //   }
+    //   }, error => {
+    //     dispatch({type : ActionTypes.CODE_ERROR, error})
+    //   })
   }
 }
 

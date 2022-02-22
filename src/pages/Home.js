@@ -43,17 +43,8 @@ const Home = () => {
   }
 
   useEffect(() => {
-    // if (products.length>0) return;
-    console.log(2);
-    const url2 = 'https://teozax.github.io/Data/images_urls.json';
-    const RequestOptions2 ={ 
-      method: 'GET',
-      mode: 'no-cors',
-      headers: {
-        'Content-Type' : 'application/json'
-      },
-    };
-    dispatch(LoadProductsAction(url,RequestOptions,url2,RequestOptions2));
+    if (products.length>0) return;
+    dispatch(LoadProductsAction(url,RequestOptions));
   }, []);
 
   let j = 0;
@@ -72,9 +63,8 @@ const Home = () => {
     // ref.current.classList.remove('img-priceh');
   }
 
-  const img_urls = useSelector(state=>state.productDetails.img_urls);
-  console.log(img_urls)
-
+  const img_urls = process.env.GIT_URL;
+console.log(process.env)
   return (
   <div className=''>
   <div className="position-relative container ">
@@ -93,7 +83,7 @@ const Home = () => {
           
             <Link to={`/Product/${prod.id}`} >
               <div ref={ref} className='img_cover'><h3 className='img-price  position-absolute'>{prod.price}$</h3></div>
-              <img className="img-fluid img_cont "   src={`https://files.fm/thumb_show.php?i=${img_urls[i]}`}  />
+              <img className="img-fluid img_cont "   src={`https://github.com/teozax/Data/blob/gh-pages/images/${i}.jpg?raw=true`}  />
             </Link>
           
         </div>

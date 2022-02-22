@@ -27,7 +27,6 @@ const Product = (props) => {
         break;
       case 'Express':
         url = `${JSON.parse(process.env.REACT_APP_API_URL)[framework]}/api/products/${id}`;
-        // url2 = 'http://127.0.0.1:8001/cart/';
         break;
     }
     const token = localStorage.getItem('user-token');
@@ -103,7 +102,7 @@ const Product = (props) => {
     <div className='d-inline-flex justify-content-end align-items-end m-5' style={{width:'100%'}} >
       <div className='slide-from-left position-relative ' >
         <img className='position-relative float-end '
-          src={"http://localhost:8000/storage/"+(id-1)+".jpg"} style={{maxHeight:'300px'}} />
+          src={`https://github.com/teozax/Data/blob/gh-pages/images/${id-1}.jpg?raw=true`} style={{maxHeight:'300px'}} />
       </div>
       <div className='position-relative ml-2 slide-from-right' style={{width:'50%'}}>
         <p>{product.description}</p>
